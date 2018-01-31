@@ -72,13 +72,55 @@ namespace FridgeOOP
             }
         }
         //Clean
-        public void IsClean()
+        public string Clean(bool IsDirty)
         {
-
+            if (isDirty)
+            {
+                isClean = true;
+                return "I Cleaned Fridge";
+            }
+            else 
+            {
+                return "Fridge is already clean, have a beer.";
+            }
         }
         //CheckSupplies
+        public string CheckFoodSupplies()
+        {
+            if (foodAmount >= 80)
+            {   
+                return "fully stocked";
+            }
+            else if (foodAmount > 40)
+            {
+                return "getting low";
+            }
+            else
+            {
+                return "time to grocery shop!";
+            }
+        }
+        //Change Bulbs
+        public string ChangeBulbs()
+        {
+            if (bulbsWork == false)
+            {
+                bulbsWork = true;
+                return "The bulbs have been changed.";
 
+            }
+            else
+            {
+                return "The bulbs don't have to be changed.";
+            }
+        }
+        
+        //Removing food
 
+        public void RemoveFood(int foodRemoved)
+        {
+            foodAmount -= foodRemoved;
+        }
 
     }
 
