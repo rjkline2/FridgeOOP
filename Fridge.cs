@@ -74,7 +74,7 @@ namespace FridgeOOP
         //Clean
         public string Clean(bool IsDirty)
         {
-            if (isDirty)
+            if (isClean)
             {
                 isClean = true;
                 return "I Cleaned Fridge";
