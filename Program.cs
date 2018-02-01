@@ -14,9 +14,12 @@ namespace FridgeOOP
             //Prompt user what to do with the fridge
             //Call methods on Fridge object to do what the user wants
             int userChoice;
-            
+
+            Fridge userFridge = new Fridge(false, "deluxe dispenser", 70, true);
+
             do
             {
+                Console.WriteLine(" ");
                 Console.WriteLine("Hello, welcome to the fridge app.");
                 Console.WriteLine("What would you like to do with your fridge?");
                 Console.WriteLine("To dispense water, type 1");
@@ -30,7 +33,7 @@ namespace FridgeOOP
 
                 userChoice = int.Parse(Console.ReadLine());
 
-                Fridge userFridge = new Fridge(false, "deluxe dispenser", 70, true);
+                
                 switch (userChoice)
                 {
                     case 1:
@@ -51,8 +54,11 @@ namespace FridgeOOP
                         Console.WriteLine("Here is the current food level:" + userFridge.FoodAmount);
                         break;
                     case 5:
+                        Console.WriteLine("Here is the current food level:" + userFridge.FoodAmount);
+                        break;
+                    case 6:
                         Console.WriteLine("Your Current Status:");
-                        Console.WriteLine(userFridge.CheckFoodSupplies());
+                        Console.WriteLine("Your dispenser is: " + userFridge.DispenserType + ", Fridge is clean: " + userFridge.IsClean + ", Your Food levels are: " + userFridge.FoodAmount + ", your bulbs are: " + userFridge.BulbsWork +".");
                         break;
                     default:
                         break;
