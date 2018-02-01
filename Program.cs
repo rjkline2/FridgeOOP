@@ -14,7 +14,7 @@ namespace FridgeOOP
             //Prompt user what to do with the fridge
             //Call methods on Fridge object to do what the user wants
             int userChoice;
-            int foodRemove;
+            
             do
             {
                 Console.WriteLine("Hello, welcome to the fridge app.");
@@ -44,11 +44,18 @@ namespace FridgeOOP
                         Console.WriteLine(userFridge.Clean());
                         break;
                     case 4:
-                        Console.WriteLine(userFridge.FoodAmount);
+                        Console.WriteLine("Here is the current food level:"+ userFridge.FoodAmount);
+                        Console.WriteLine("How much foor do you want to remove? Whole numbers only, between 1-80");
+                        int foodRemove =int.Parse(Console.ReadLine());
+                        userFridge.RemoveFood(foodRemove);
+                        Console.WriteLine("Here is the current food level:" + userFridge.FoodAmount);
                         break;
                     case 5:
+                        Console.WriteLine("Your Current Status:");
                         Console.WriteLine(userFridge.CheckFoodSupplies());
+                        break;
                     default:
+                        break;
                 }
 
             } while (userChoice != 8);
