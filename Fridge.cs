@@ -72,7 +72,7 @@ namespace FridgeOOP
             }
         }
         //Clean
-        public string Clean(bool IsDirty)
+        public string Clean(bool isClean)
         {
             if (isClean)
             {
